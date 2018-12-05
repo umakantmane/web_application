@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}Collage List{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>EMAIL</th>
+          <th>ADDRESS</th>
+          <th>CITY</th>
+          <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody >
+      {% for row in data %}
+
+       <tr>
+
+           <td> {{ row.id }}</td>
+           <td> {{ row.name }}</td>
+           <td> {{ row.email }}</td>
+           <td> {{ row.address }}</td>
+           <td> {{ row.city }}</td>
+           <td>
+
+               <span><a href="/view?id={{ row.id }}" class="btn btn-info btn-xs"> VIEW </a></span>
+               <span><a href="/update?id={{ row.id }}" class="btn btn-primary btn-xs"> UPDATE </a></span>
+               <span><a onclick="return deleteItem()" href="/delete?id={{ row.id }}" class="btn btn-warning btn-xs"> DELETE </a></span>
+
+           </td>
+
+       </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+<script>
+
+    function deleteItem(){
+        if(confirm('Are you sure to delete this item?')){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>
+{% endblock %}

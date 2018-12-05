@@ -1,0 +1,38 @@
+
+{% extends 'layout.html' %}
+
+{% block title %} Hello Django{% endblock %}
+{% block content %}
+
+<h3>hello django...</h3>
+
+
+{% if name == ''  %}
+
+ <h3>Empty....</h3>
+
+{% else %}
+
+ <h3>Name: {{ name }}</h3>
+
+{% endif %}
+
+<!--<h3>{{ name }}</h3>-->
+<!--<h3>{{ email }}</h3>-->
+
+<!--<h3>{{ l1.5 }}</h3>-->
+<!--<h3>{{ d2.city }}</h3>-->
+
+<!--{% for i in l1 %}-->
+
+<!--<h2>{{ i }}</h2>-->
+
+<!--{% endfor %}-->
+
+<!--{% for key,value in d2.items %}-->
+
+<!--<h3> {{ key }}:{{ value }}</h3>-->
+
+<!--{% endfor %}-->
+
+{% endblock %}
